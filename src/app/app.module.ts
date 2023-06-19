@@ -39,6 +39,7 @@ import { DialogOverviewReportDialog } from './pages/publication/post/dialogrepor
 import { DialogreportforumComponent } from './pages/ForumPage/dialogreportforum/dialogreportforum.component';
 import { DialogreportcommentComponent } from './pages/Fanatic/Fanatic-Forumcomment/dialogreportcomment/dialogreportcomment.component';
 import { GoogleTagManagerModule } from 'angular-google-tag-manager';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     ChangePasswordComponent,
     DialogOverviewReportDialog,
     DialogreportforumComponent,
-    DialogreportcommentComponent
+    DialogreportcommentComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
