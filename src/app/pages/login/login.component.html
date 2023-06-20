@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rows="5" rowHeight="100%">
+
+  <mat-grid-tile style="background-color: black;">
+  <form [formGroup]="loginform">
+    <h1 style="color: #F2DF4B; font-weight: bold; font-size: 45px;">Bienvenido a Fortloom</h1>
+    <mat-form-field floatLabel="always" style="width: 100%;">
+        <input formControlName="email" matInput type="text" class="form-control form-control-lg" required style="background-color: black; color: white;">
+        <mat-label><strong>Ingrese su correo</strong></mat-label>
+        <mat-error *ngIf="loginform.hasError('required','email')">Es requerido</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field floatLabel="always" style="width: 100%;">
+        <input formControlName="password" matInput type="password" class="form-control form-control-lg" required style="background-color: black; color: white;">
+        <mat-label><strong>Ingrese su contraseña</strong></mat-label>
+        <mat-error *ngIf="loginform.hasError('required','password')">Es requerido</mat-error>
+    </mat-form-field>  
+  
+    <button type="submit" mat-raised-button color="primary" id="enter" class="but" (click)="onSubmit()">Ingresar</button>
+    <div class="form-group">
+  
+      <a routerLink="/registerfanatic"  style="color:#eee;" class="link">Regístrate como un fanático</a>
+      <mat-divider></mat-divider>
+      <a routerLink="/registerartist" style="color:#eee;" class="link">Regístrate como un artista</a>
+  
+  
+    </div>
+     
+  
+  </form>
+  
+  </mat-grid-tile>
+    <mat-grid-tile class="imagehome">
+        <div style="margin-top: 1 50px;">
+            <h2 class="pp">“Connect with the artists you love, or with the fans you adore”</h2>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

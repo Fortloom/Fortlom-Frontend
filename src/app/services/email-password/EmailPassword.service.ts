@@ -9,7 +9,7 @@ import { EmailValues } from 'src/app/models/email-values';
 })
 export class EmailPasswordService {
 
-  basePath='https://experiment-isw-backend-jenkins.herokuapp.com/email-password'
+  basePath='http://localhost:8081/email-password'
 constructor(private httpClient: HttpClient) { }
 
 public sendEmail(dto: EmailValues): Observable<any> {

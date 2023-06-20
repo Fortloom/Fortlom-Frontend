@@ -26,28 +26,28 @@ export class AuthService {
       `Backend returned code ${error.status}, body was: ${error.error}`
     );
   }
-  
+
   return throwError('Something happened with request, please try again later');
   }
 
 
   LogUser(item: LoginUser): Observable<JwtDTO>{
 
-    return this.http.post<any>(`https://experiment-isw-backend-jenkins.herokuapp.com/auth/login`, item, this.httpOptions)
+    return this.http.post<any>(`http://localhost:8081/auth/login`, item, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
+
+
   }
   RegisterArtist(item:NewArtist): Observable<any>{
 
-     return this.http.post<any>(`https://experiment-isw-backend-jenkins.herokuapp.com/auth/artist`, item, this.httpOptions)
+     return this.http.post<any>(`http://localhost:8081/auth/artist`, item, this.httpOptions)
 
   }
   RegisterFanatic(item:NewFanatic): Observable<any>{
 
-    return this.http.post<any>(`https://experiment-isw-backend-jenkins.herokuapp.com/auth/fanatic`, item, this.httpOptions)
+    return this.http.post<any>(`http://localhost:8081/auth/fanatic`, item, this.httpOptions)
 
  }
 

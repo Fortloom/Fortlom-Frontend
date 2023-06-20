@@ -1,0 +1,29 @@
+.imagehome{
+    background-image: url(https://www.news10.com/wp-content/uploads/sites/64/2022/04/crowd-g6eae66f32_1920.jpg);
+    background-size: cover;
+}
+
+.pp{
+    font-size: 35px;
+    text-align: center;
+    color: #F2DF4B;
+}
+
+.form{
+    height:60%;
+    width:65%;
+}
+
+.but{
+    font-size: 25px;
+    color:black;
+}
+
+.oo{
+    height: 200%;
+}
+
+.link{
+    font-size: 15px;
+    line-height: 45px;
+}

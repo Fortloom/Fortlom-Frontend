@@ -9,17 +9,17 @@ import { Person } from 'src/app/models/Person';
 })
 export class PersonService {
 
-  basePath = 'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/users';
+  basePath = 'http://localhost:8081/api/v1/users';
   basePath2 = 'http://localhost:3000/Usuario';
-  
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -29,12 +29,12 @@ export class PersonService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
-  
-  
-  
+
+
+
   // Get Usuario by id
   getById(id: any): Observable<Person> {
     return this.http.get<Person>(`${this.basePath}/${id}`, this.httpOptions)
@@ -42,16 +42,16 @@ export class PersonService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   update(id: any, item: any): Observable<Person> {
 
     return this.http.put<Person>(`${this.basePath}/changeprofile/${id}`, JSON.stringify(item), this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
-  
+
+
+
   }
   updatepassword(id: any, item: any): Observable<Person> {
 
@@ -59,9 +59,9 @@ export class PersonService {
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
-  
+
+
+
   }
 
 }

@@ -13,9 +13,9 @@ export class EventService {
 
 
 
-basePath = 'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/event';
-BasePath=  'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/events';
-basepathcreate='https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/artist';
+basePath = 'http://localhost:8081/api/v1/event';
+BasePath=  'http://localhost:8081/api/v1/events';
+basepathcreate='http://localhost:8081/api/v1/artist';
 httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
