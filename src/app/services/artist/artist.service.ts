@@ -10,7 +10,7 @@ import { Artist } from 'src/app/models/artist';
 export class ArtistService {
 
 
-  basePath = 'http://localhost:8081/api/v1/artists';
+  basePath = 'http://localhost:8081/api/v1/user-service/artists';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -46,7 +46,7 @@ getById(id: any): Observable<Artist> {
       catchError(this.handleError));
 }
 getByname(id: string): Observable<Artist> {
-  return this.http.get<Artist>(`${this.basePath}/name/${id}`, this.httpOptions)
+  return this.http.get<Artist>(`${this.basePath}/username/${id}`, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError));

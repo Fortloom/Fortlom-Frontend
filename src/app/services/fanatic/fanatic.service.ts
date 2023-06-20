@@ -9,7 +9,7 @@ import { Fanatic } from 'src/app/models/fanatic';
 })
 export class FanaticService {
 
-  basePath = 'http://localhost:8081/api/v1/fanatics';
+  basePath = 'http://localhost:8081/api/v1/user-service/fanatics';
 
 
   httpOptions = {
@@ -49,7 +49,7 @@ export class FanaticService {
         catchError(this.handleError));
   }
   getByname(id: string): Observable<Fanatic> {
-    return this.http.get<Fanatic>(`${this.basePath}/name/${id}`, this.httpOptions)
+    return this.http.get<Fanatic>(`${this.basePath}/username/${id}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
