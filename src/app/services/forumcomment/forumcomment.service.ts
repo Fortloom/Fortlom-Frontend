@@ -9,17 +9,17 @@ import { Forumcomment } from 'src/app/models/forumcomment';
 })
 export class ForumcommentService {
 
-  basePath = 'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/forumcomments';
-  basepathcomentsforforoum='https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/forums'
-  basePath2='https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/users'
+  basePath = 'http://localhost:8081/api/v1/forumcomments';
+  basepathcomentsforforoum='http://localhost:8081/api/v1/forums'
+  basePath2='http://localhost:8081/api/v1/users'
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -29,10 +29,10 @@ export class ForumcommentService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
-  
+
   // Create ForumComment
   create(item: any,userId:number,forumId:number): Observable<Forumcomment> {
     return this.http.post<Forumcomment>(`${this.basePath2}/${userId}/forums/${forumId}/forumcomments`, JSON.stringify(item), this.httpOptions)
@@ -40,7 +40,7 @@ export class ForumcommentService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get ForumComment by id
   getById(id: any): Observable<Forumcomment> {
     return this.http.get<Forumcomment>(`${this.basePath}/${id}`, this.httpOptions)
@@ -48,7 +48,7 @@ export class ForumcommentService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get All ForumComments
   getAll(): Observable<Forumcomment> {
     return this.http.get<Forumcomment>(this.basePath, this.httpOptions)
@@ -56,7 +56,7 @@ export class ForumcommentService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Update ForumComment
   update(id: any, item: any): Observable<Forumcomment> {
     return this.http.put<Forumcomment>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
@@ -64,7 +64,7 @@ export class ForumcommentService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Delete ForumComment
   delete(id: any) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
@@ -72,17 +72,17 @@ export class ForumcommentService {
         retry(2),
         catchError(this.handleError));
   }
-  
-  
+
+
   getallcommentsperforum(id:number){
-  
+
     return this.http.get<Forumcomment>(`${this.basepathcomentsforforoum}/${id}/forumcomments`, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
-  
+
+
   }
- 
+
 
 }

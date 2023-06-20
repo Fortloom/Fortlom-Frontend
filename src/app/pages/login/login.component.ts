@@ -54,24 +54,24 @@ onSubmit(){
     this.authService.LogUser(this.loginUsuario).subscribe(
       data=>{
         this.tokenService.setToken(data.token)
-        if(this.tokenService.isartist()==true){
+        if(this.tokenService.isartist()){
           console.log("es artista")
           this.serivcearti.getByname(this.tokenService.getUserName()).subscribe((response:any)=>{
 
-            
+
             this.route.navigate([`/HomeArtist/${response.id}`]);
           })
-          
+
         }
-        if(this.tokenService.isfanatic()==true){
+        if(this.tokenService.isfanatic()){
           console.log("es fanatic")
           this.servicefana.getByname(this.tokenService.getUserName()).subscribe((response:any)=>{
 
             this.route.navigate([`/HomeFanatic/${response.id}`]);
           })
-          
+
         }
-        
+
         console.log(data.token)
       },
       err=>{
@@ -81,7 +81,7 @@ onSubmit(){
   }
 }
 getAllUsers(){
-  
+
 }
   getUser(){
 }

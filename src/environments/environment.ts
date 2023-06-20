@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  productoURL: 'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1',
-  authURL: 'https://experiment-isw-backend-jenkins.herokuapp.com/auth',
-  changePasswordURL:'https://experiment-isw-backend-jenkins.herokuapp.com/email-password'
+  productoURL: 'http://localhost:8081/api/v1',
+  authURL: 'http://localhost:8081/auth',
+  changePasswordURL:'http://localhost:8081/email-password'
 };
 
 /*

@@ -9,16 +9,16 @@ import { Multimedia } from 'src/app/models/multimedia';
 })
 export class MultimediaService {
 
-  basePath = 'https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/multimedias';
-  basePath2='https://experiment-isw-backend-jenkins.herokuapp.com/api/v1/publications'
+  basePath = 'http://localhost:8081/api/v1/multimedias';
+  basePath2='http://localhost:8081/api/v1/publications'
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
   }
-  
+
   constructor(private http: HttpClient) { }
-  
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log(`An error occurred: ${error.error.message} `);
@@ -28,10 +28,10 @@ export class MultimediaService {
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
     }
-  
+
     return throwError('Something happened with request, please try again later');
   }
-  
+
   // Create Multimedia
   create(item: any,publicationId:number){
      this.http.post(`${this.basePath2}/${publicationId}/multimedias`, item,  { observe: 'response' })
@@ -39,7 +39,7 @@ export class MultimediaService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get Multimedia by id
   getById(id: any): Observable<Multimedia> {
     return this.http.get<Multimedia>(`${this.basePath}/${id}`, this.httpOptions)
@@ -47,7 +47,7 @@ export class MultimediaService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Get All Multimedias
   getAll(): Observable<Multimedia> {
     return this.http.get<Multimedia>(this.basePath, this.httpOptions)
@@ -56,12 +56,12 @@ export class MultimediaService {
         catchError(this.handleError));
   }
   getallmultimediabypublication(id:number){
-  
+
     return this.http.get<Multimedia>(`${this.basePath2}/${id}/multimedias`, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError));
-  
+
   }
   // Update Multimedia
   update(id: any, item: any): Observable<Multimedia> {
@@ -70,7 +70,7 @@ export class MultimediaService {
         retry(2),
         catchError(this.handleError));
   }
-  
+
   // Delete Multimedia
   delete(id: any) {
     return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)

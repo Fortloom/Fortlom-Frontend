@@ -1,6 +1,6 @@
 // import { ChangePasswordComponent } from './pages/ForgotPassword/change-password/change-password.component';
-// import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
-// import { RegisterArtistComponent } from './pages/Register/RegisterArtist/RegisterArtist.component';
+import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
+import { RegisterArtistComponent } from './pages/Register/RegisterArtist/RegisterArtist.component';
 import { FanaticGuard } from './guard/fanatic/fanatic.guard';
 import { ArtistGuard } from './guard/artist/artist.guard';
 // import { ConfigurationArtistComponent } from './pages/configuration/configuration-artist/configuration-artist.component';
@@ -47,8 +47,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic'] }},
 
 
-  // {path:'registerartist',component:RegisterArtistComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic'] }},
-  // {path:'registerfanatic',component:RegisterFanaticComponent},
+  {path:'registerartist',component:RegisterArtistComponent,canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic'] }},
+  {path:'registerfanatic',component:RegisterFanaticComponent},
   // { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] , data: { expectedRol: ['Role_Artist','Role_Fanatic'] }},
   // { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard], data: { expectedRol: ['Role_Artist','Role_Fanatic'] } },
 

@@ -32,8 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { Post2Component } from './pages/publication/post2/post2.component';
 import { LoginComponent } from './pages/Login/Login.component';
 import { interceptorProvider } from './interceptors/Interceptor.service';
-// import { RegisterArtistComponent } from './pages/Register/RegisterArtist/RegisterArtist.component';
-// import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
+import { RegisterArtistComponent } from './pages/Register/RegisterArtist/RegisterArtist.component';
+import { RegisterFanaticComponent } from './pages/Register/RegisterFanatic/RegisterFanatic.component';
 // import { SendEmailComponent } from './pages/ForgotPassword/send-email/send-email.component';
 // import { DialogOverviewReportDialog } from './pages/publication/post/dialogreport/dialogreport.component';
 // import { DialogreportforumComponent } from './pages/ForumPage/dialogreportforum/dialogreportforum.component';
@@ -68,8 +68,8 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     // ArtistEventComponent,
     // ConfigurationArtistComponent,
     LoginComponent,
-    // RegisterArtistComponent,
-    // RegisterFanaticComponent,
+    RegisterArtistComponent,
+    RegisterFanaticComponent,
     // SendEmailComponent,
     // ChangePasswordComponent,
     // DialogOverviewReportDialog,
@@ -87,7 +87,7 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     GoogleTagManagerModule.forRoot({
       id: "GTM-WZW48CK",
     })
-    
+
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]
