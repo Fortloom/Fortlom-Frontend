@@ -1,64 +1,58 @@
-<mat-grid-list cols="2" rows="5" rowHeight="700px">
+<div style="background-color: black; padding-left: 15px; padding-top: 5px;">
+  <a routerLink="/login" class="back">Volver</a>
+</div>
+<mat-grid-list cols="2" rows="5" rowHeight="100%" style="background-color: black;">
 
   <mat-grid-tile>
   <form [formGroup]="signupform" class="form"  (submit)="onSubmit()">
-
+    <h1 style="color: #F9EA49; font-weight: bold; font-size: 45px; margin-bottom: 30px;">Regístrate como Fanático</h1>
     <div class="form-group">
-
-      <input formControlName="email" [(ngModel)]="user.email" matInput type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" requiered >
-      <mat-error *ngIf="signupform.controls['email'].dirty && signupform.hasError('required','email')">Es requerido</mat-error>
+      <mat-form-field style="width: 100%;">
+        <input formControlName="email" [(ngModel)]="user.email" matInput type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo" requiered style="background-color: black; color: white;">
+      </mat-form-field>
     </div>
     <div class="form-group" >
-
-      <input formControlName="password"   [(ngModel)]="user.password" matInput type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
-      <mat-error *ngIf="signupform.controls['password'].dirty && signupform.hasError('required','password')">Es requerido</mat-error>
-
+      <mat-form-field style="width: 100%;">
+        <input formControlName="password" [(ngModel)]="user.password" matInput type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Ingrese una contraseña" required style="background-color: black; color: white;"> 
+      </mat-form-field>
     </div>
 
 
     <div class="form-group">
-
-      <input  formControlName="username"  [(ngModel)]="user.username" matInput type="Name" class="form-control form-control-lg" id="exampleInputUserName1" placeholder="Name" required>
-      <mat-error  *ngIf="signupform.controls['username'].dirty && signupform.hasError('required','username')">Es requerido</mat-error>
+      <mat-form-field style="width: 100%;">
+        <input  formControlName="username"  [(ngModel)]="user.username" matInput type="Name" class="form-control form-control-lg" id="exampleInputUserName1" placeholder="Ingrese un nombre de usuario" required style="background-color: black; color: white;">
+      </mat-form-field>
     </div>
 
 
 
     <div class="form-group">
-
-      <input  formControlName="name"  [(ngModel)]="user.realname" matInput type="Name" class="form-control form-control-lg" id="exampleInputName1" placeholder="Name" required>
-      <mat-error  *ngIf="signupform.controls['name'].dirty && signupform.hasError('required','name')">Es requerido</mat-error>
-    </div>
-
-
-
-
-
-    <div class="form-group">
-
-      <input formControlName="lastname" [(ngModel)]="user.lastname"  matInput type="LastName" class="form-control form-control-lg" id="exampleInputLastName1" placeholder="LastName" required>
-      <mat-error  *ngIf="signupform.controls['lastname'].dirty && signupform.hasError('required','lastname')">Es requerido</mat-error>
+      <mat-form-field style="width: 100%;">
+        <input  formControlName="name"  [(ngModel)]="user.realname" matInput type="Name" class="form-control form-control-lg" id="exampleInputName1" placeholder="Ingrese su nombre" required style="background-color: black; color: white;">
+      </mat-form-field>
     </div>
     <div class="form-group">
-
-      <input formControlName="alias" [(ngModel)]="user.fanaticalias"  matInput type="alias" class="form-control form-control-lg" id="exampleInputalias" placeholder="Alias" required>
-      <mat-error  *ngIf="signupform.controls['alias'].dirty && signupform.hasError('required','alias')">Es requerido</mat-error>
+      <mat-form-field style="width: 100%;">
+        <input formControlName="lastname" [(ngModel)]="user.lastname"  matInput type="LastName" class="form-control form-control-lg" id="exampleInputLastName1" placeholder="Ingrese su apellido" required style="background-color: black; color: white;">
+      </mat-form-field>
     </div>
-
-    <button type="submit"  [disabled]="!signupform.valid" mat-raised-button color="primary" class="but" id="enter">Register as Fanatic</button>
+    <div class="form-group">
+      <mat-form-field style="width: 100%">
+        <input formControlName="alias" [(ngModel)]="user.fanaticalias"  matInput type="alias" class="form-control form-control-lg" id="exampleInputalias" placeholder="Ingrese su alias" required style="background-color: black; color: white;">
+      </mat-form-field>
+    </div>
+    <div style="text-align: center;">
+      <button type="submit" mat-raised-button color="primary" class="but">Registrarme</button>
+    </div>
 
 
 
   </form>
 
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile class="registerFanaticBackground">
     <div>
-  <img src='https://cdn.discordapp.com/attachments/866839251563446272/898413811193753630/unknown.png'
-  class="imagehome">
-
-
-
-  </div>
+      <p class="pp">Support. Stay tuned. Get involved.</p>
+    </div>
   </mat-grid-tile>
   </mat-grid-list>

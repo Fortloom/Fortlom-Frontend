@@ -25,7 +25,7 @@ export class RegisterArtistComponent implements OnInit {
   date!:Date;
   email!:string;
   loginUsuario!: LoginUser;
-  constructor(private formBuilder:FormBuilder,private route:Router,private service:AuthService,private service2:PersonService) {
+  constructor(private formBuilder:FormBuilder,private route:Router,private service:AuthService, private service2:PersonService) {
     this.user={}as NewArtist;
     this.dataSource = new MatTableDataSource<any>();
     this.dataSource2 = new MatTableDataSource<any>();
@@ -43,46 +43,25 @@ export class RegisterArtistComponent implements OnInit {
       password:['',Validators.required],
 
      })
-
      console.log(this.user)
   }
 
 
-
-
-
-
-
-
-
-
-
   registerArtist(){
-
     this.service.RegisterArtist(this.user).subscribe((response: any) => {
       alert("cuenta creada")
       this.route.navigate(['/login']);
-
-
-
-
     },err=>{
       alert("datos ya usados")
     });
-
-
   }
 
 
 
   onSubmit(){
-
-  console.log(this.signupform.value.email)
-
-   this.registerArtist()
-  //this.signupform.reset();
-   //this.route.navigate(['/login'])
-
+    if(this.signupform.valid) {
+      console.log(this.signupform.value.email)
+      this.registerArtist()
+    }
   }
-
 }

@@ -57,11 +57,9 @@ export class RegisterFanaticComponent implements OnInit {
   }
 
   onSubmit(){
-
-
-    this.registerFanatic()
-
-
+    if(this.signupform.valid) {
+      this.registerFanatic()
+    }
   }
 
 }

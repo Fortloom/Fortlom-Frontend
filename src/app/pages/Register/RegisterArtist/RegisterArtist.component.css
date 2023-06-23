@@ -1,19 +1,35 @@
-.imagehome{
+.registerArtistBackground{
+  background-image: url(https://cdnph.upi.com/sv/ph/og/upi/63071208971979/2008/1/3628dcae639a40e50f1f9bb2ec64d09b/v1.5/Amateur-band-winners-to-jam-with-Police.jpg);
+  background-size: cover;
+}
 
-    height:490px;
-    cursor: pointer;
-    }
-    .form{
-  
-  
-      height:60%;
-      width:65%;
-  
-      }
-      .but{
-        
-        height:10%;
-        font-size: 25px;
-        color:black;
-  
-      }
+
+.form{
+  height:60%;
+  width:65%;
+}
+
+.but{
+  font-weight: normal;
+  font-size: 20px;
+  color:#eee;
+}
+
+.pp{
+  font-size: 35px;
+  text-align: center;
+  color: #F9EA49;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.back {
+  color:#eee;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.back:hover {
+  color: #F9EA49;
+  text-decoration: underline;
+}

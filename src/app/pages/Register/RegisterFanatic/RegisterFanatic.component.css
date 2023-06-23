@@ -1,19 +1,33 @@
-.imagehome{
+.registerFanaticBackground {
+  background-image: url(https://chorus.stimg.co/20977929/105SECONDS080115.jpg?w=412&h=600&auto=compress&cs=tinysrgb&crop=faces&dpr=2.625);
+  background-size: cover;
+}
+.form {
+  height:60%;
+  width:65%;
+}
 
-    height:490px;
-    cursor: pointer;
-    }
-    .form{
-  
-  
-      height:60%;
-      width:65%;
-  
-      }
-      .but{
-        
-        height:10%;
-        font-size: 25px;
-        color:black;
-  
-      }
+.but {
+  font-weight: normal;
+  font-size: 20px;
+  color:#eee;
+}
+
+.pp{
+  font-size: 35px;
+  text-align: center;
+  color: #F9EA49;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.back {
+  color:#eee;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.back:hover {
+  color: #F9EA49;
+  text-decoration: underline;
+}
