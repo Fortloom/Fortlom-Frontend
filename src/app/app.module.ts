@@ -1,7 +1,7 @@
 // import { ChangePasswordComponent } from './pages/ForgotPassword/change-password/change-password.component';
-// import { ConfigurationArtistComponent } from './pages/configuration/configuration-artist/configuration-artist.component';
+import { ConfigurationArtistComponent } from './pages/configuration/configuration-artist/configuration-artist.component';
 // import { ArtistEventComponent } from './pages/Artists/ArtistEvent/ArtistEvent.component';
-// import { ConfigurationFanaticComponent } from './pages/configuration/configuration-fanatic/configuration-fanatic.component';
+import { ConfigurationFanaticComponent } from './pages/configuration/configuration-fanatic/configuration-fanatic.component';
 // import { CommentComponent } from './pages/publication/comment/comment.component';
 // import { PostComponent } from './pages/publication/post/post.component';
 // import { CommentFormComponent } from './pages/publication/comment-form/comment-form.component';
@@ -64,9 +64,9 @@ import { GoogleTagManagerModule } from 'angular-google-tag-manager';
     // CommentComponent,
     // Post2Component,
     // PostComponent,
-    // ConfigurationFanaticComponent,
+    ConfigurationFanaticComponent,
     // ArtistEventComponent,
-    // ConfigurationArtistComponent,
+    ConfigurationArtistComponent,
     LoginComponent,
     RegisterArtistComponent,
     RegisterFanaticComponent,
